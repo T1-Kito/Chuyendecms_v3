@@ -50,3 +50,13 @@
 <!-- /wp:heading -->
 
 <!-- wp:latest-comments {"displayAvatar":true,"avatarSize":32,"displayDate":true,"displayPostTitle":true,"number":6} /-->
+
+<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"600","textTransform":"uppercase","letterSpacing":"1.2px"}}} -->
+<h3 class="wp-block-heading" style="font-style:normal;font-weight:600;letter-spacing:1.2px;text-transform:uppercase" aria-label="<?php echo esc_attr_x( 'Sidebar section: Recent Posts', 'Accessible label for recent posts section', 'twentytwentyfive' ); ?>"><?php esc_html_e( 'Recent Posts', 'twentytwentyfive' ); ?></h3>
+<!-- /wp:heading -->
+
+<!-- wp:latest-posts {"displayPostDate":true,"displayFeaturedImage":true,"featuredImageAlign":"left","featuredImageSizeWidth":48,"featuredImageSizeHeight":48,"postLayout":"list","postsToShow":6} /-->
