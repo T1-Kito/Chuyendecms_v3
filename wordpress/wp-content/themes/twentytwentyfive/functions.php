@@ -167,3 +167,14 @@ function add_bootstrap_and_jquery() {
     wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'add_bootstrap_and_jquery');
+
+// Register menu locations for dynamic footer content (DB-driven)
+function twentytwentyfive_register_menus() {
+    register_nav_menus(
+        array(
+            'footer' => __( 'Footer Menu', 'twentytwentyfive' ),
+            'social' => __( 'Social Menu', 'twentytwentyfive' ),
+        )
+    );
+}
+add_action( 'init', 'twentytwentyfive_register_menus' );
