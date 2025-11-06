@@ -1,64 +1,63 @@
 <?php
 /**
- * Custom Footer for Bootsnipp integration
+ * Dynamic footer for Twenty Twenty-Five
+ * Uses menus from WordPress Admin (DB-driven), no hard-coded links.
  */
 ?>
 
-<!-- Footer -->
-<section id="footer">
-    <div class="container">
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-                </ul>
+<footer id="site-footer" class="header-footer-group">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <?php if ( has_nav_menu( 'footer' ) ) : ?>
+                    <nav aria-label="<?php esc_attr_e( 'Footer', 'twentytwentyfive' ); ?>">
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'footer',
+                                    'container'      => '',
+                                    'items_wrap'     => '%3$s',
+                                    'depth'          => 1,
+                                )
+                            );
+                            ?>
+                        </ul>
+                    </nav>
+                <?php else : ?>
+                    <p class="small mb-0"><?php _e( 'Assign a menu to Footer Menu to display links here.', 'twentytwentyfive' ); ?></p>
+                <?php endif; ?>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
-                </ul>
+            <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                <?php if ( has_nav_menu( 'social' ) ) : ?>
+                    <nav aria-label="<?php esc_attr_e( 'Social links', 'twentytwentyfive' ); ?>">
+                        <ul class="list-unstyled d-inline-flex gap-3">
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'social',
+                                    'container'      => '',
+                                    'items_wrap'     => '%3$s',
+                                    'depth'          => 1,
+                                    'link_before'    => '<span class="screen-reader-text">',
+                                    'link_after'     => '</span>',
+                                )
+                            );
+                            ?>
+                        </ul>
+                    </nav>
+                <?php endif; ?>
             </div>
         </div>
+        <hr>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-                <ul class="list-unstyled list-inline social text-center">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                </ul>
+            <div class="col-12 d-flex justify-content-between small">
+                <span><?php echo esc_html( '© ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?></span>
+                <span><?php _e( 'Powered by WordPress', 'twentytwentyfive' ); ?></span>
             </div>
-        </div>  
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                <p><u><a href="#">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
-                <p class="h6">© All right Reversed.<a class="text-green ml-2" href="#" target="_blank">Sunlimetech</a></p>
-            </div>
-        </div>  
+        </div>
     </div>
-</section>
-<!-- ./Footer -->
+</footer>
 
 <?php wp_footer(); ?>
 </body>
