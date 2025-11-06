@@ -12,7 +12,23 @@
  */
 
 ?>
-<!-- wp:query {"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"full","layout":{"type":"default"}} -->
+
+<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull">
+    <!-- wp:paragraph {"fontSize":"small"} -->
+    <p class="has-small-font-size">
+        <?php
+        global $wp_query;
+        $query_string = get_search_query();
+        $found_posts  = is_a( $wp_query, 'WP_Query' ) ? (int) $wp_query->found_posts : 0;
+        echo esc_html( sprintf( _n( '%d result for “%s”.', '%d results for “%s”.', $found_posts, 'twentytwentyfive' ), $found_posts, $query_string ) );
+        ?>
+    </p>
+    <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-query alignfull">
 	<!-- wp:post-template {"align":"full","layout":{"type":"default"}} -->
 		<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
@@ -25,13 +41,17 @@
 		<!-- /wp:group -->
 	<!-- /wp:post-template -->
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:query-no-results -->
-		<!-- wp:paragraph -->
-		<p><?php echo esc_html_x( 'Sorry, but nothing was found. Please try a search with different keywords.', 'Message explaining that there are no results returned from a search.', 'twentytwentyfive' ); ?></p>
-		<!-- /wp:paragraph -->
-		<!-- /wp:query-no-results -->
-	</div>
+    <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+        <!-- wp:query-no-results -->
+        <!-- wp:paragraph -->
+        <p><?php echo esc_html_x( 'No results matched your search. Try different keywords or filters.', 'Message explaining that there are no results returned from a search.', 'twentytwentyfive' ); ?></p>
+        <!-- /wp:paragraph -->
+        <!-- wp:search {"label":"<?php echo esc_html_x( 'Search again', 'Search form label.', 'twentytwentyfive' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search posts…', 'Search input field placeholder text.', 'twentytwentyfive' ); ?>","buttonText":"<?php echo esc_attr_x( 'Search', 'Button text. Verb.', 'twentytwentyfive' ); ?>"} /-->
+        <!-- wp:paragraph {"fontSize":"small"} -->
+        <p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html_x( 'Back to homepage', 'Link text for going to homepage.', 'twentytwentyfive' ); ?></a></p>
+        <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+    </div>
 	<!-- /wp:group -->
 	<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide">
