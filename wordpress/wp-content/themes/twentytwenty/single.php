@@ -140,6 +140,170 @@ get_header();
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+/* ===============================
+   CUSTOM COMMENT AREA - CARD STYLE
+   =============================== */
+.comment-section .comment-area {
+    background: #f5f5f5 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 30px !important;
+    font-family: "Segoe UI", sans-serif !important;
+    border-radius: 10px !important;
+}
+
+.comment-section .comment-area h3 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin-bottom: 25px !important;
+}
+
+.comment-section .comment-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin-top: 30px !important;
+}
+
+.comment-section .comment-list li {
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+}
+
+.comment-section .comment-body,
+.comment-section li .comment-body {
+    background: #f0f0f0 !important;
+    border-radius: 8px !important;
+    padding: 15px 20px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    position: relative !important;
+}
+
+.comment-section .comment-meta,
+.comment-section li .comment-meta {
+    display: block !important;
+    margin-bottom: 8px !important;
+    padding-left: 65px !important;
+    min-height: 50px !important;
+    position: relative !important;
+    line-height: 1.4 !important;
+}
+
+.comment-section .comment-author .avatar,
+.comment-section .comment-meta .avatar,
+.comment-section li .comment-author .avatar,
+.comment-section li .comment-meta .avatar {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 4px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+.comment-section .comment-author,
+.comment-section li .comment-author {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    color: #333 !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    line-height: 1.4 !important;
+    position: relative !important;
+}
+
+.comment-section .comment-author .fn,
+.comment-section li .comment-author .fn {
+    font-weight: 700 !important;
+    color: #333 !important;
+    display: inline !important;
+}
+
+.comment-section .comment-author .says,
+.comment-section li .comment-author .says {
+    display: none !important;
+}
+
+.comment-section .comment-metadata,
+.comment-section li .comment-metadata {
+    display: none !important;
+}
+
+.comment-section .comment-content,
+.comment-section li .comment-content {
+    font-size: 14px !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+    margin-top: 0 !important;
+    padding-left: 65px !important;
+    padding-top: 0 !important;
+}
+
+.comment-section .comment-footer-meta,
+.comment-section li .comment-footer-meta {
+    display: none !important;
+}
+
+/* Ẩn nút Reply màu đỏ */
+.comment-section .comment-reply-link,
+.comment-section .comment-reply,
+.comment-section a.comment-reply-link,
+.comment-section li .comment-reply-link,
+.comment-section li .comment-reply,
+.comment-section .comment-body .comment-reply-link,
+.comment-section .comment-body .comment-reply,
+.comment-section .comment-body a.comment-reply-link,
+.comment-section li .comment-body .comment-reply-link,
+.comment-section li .comment-body .comment-reply,
+.comment-section .comment-footer-meta .comment-reply-link,
+.comment-section .comment-footer-meta .comment-reply,
+.comment-section .comment-footer-meta a.comment-reply-link {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.comment-section .comment-form textarea {
+    width: 100% !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-size: 15px !important;
+    resize: none !important;
+    height: 120px !important;
+    background: #fafafa !important;
+    transition: all 0.2s ease !important;
+}
+
+.comment-section .comment-form textarea:focus {
+    background: #fff !important;
+    border-color: #007bff !important;
+    outline: none !important;
+}
+
+.comment-section .comment-form input[type="submit"] {
+    background-color: #007bff !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 10px 25px !important;
+    border-radius: 6px !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
+}
+
+.comment-section .comment-form input[type="submit"]:hover {
+    background-color: #0056b3 !important;
+}
 </style>
 
 <section class="single-layout">
